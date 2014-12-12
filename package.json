@@ -1,0 +1,27 @@
+{
+    "name": "mdgen",
+    "version": "0.8.0",
+    "description": "Template-based code generator for model-driven development",
+    "main": "mdgen.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://staruml@github.com/staruml/mdgen.git"
+    },
+    "author": "Minkyu Lee <niklaus.lee@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "commander": "2.5.0",
+        "metadata-json": "0.8.3"
+    },    
+    "bugs": {
+        "url": "https://github.com/staruml/mdgen/issues"
+    },
+    "homepage": "https://github.com/staruml/mdgen",
+    "preferGlobal": true,
+    "bin": {
+        "mdgen": "mdgen.js"
+    }
+}
