@@ -1,6 +1,6 @@
 {
     "name": "mdgen",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "description": "Template-based code generator for model-driven development",
     "main": "mdgen.js",
     "scripts": {

@@ -1,7 +1,3 @@
-**DO NOT USE THIS MODULE (UNDER DEVELOPMENT)**
-
----
-
 Model-Driven Generation (mdgen)
 ===============================
 
