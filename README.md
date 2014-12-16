@@ -5,10 +5,12 @@
 Model-Driven Generation (mdgen)
 ===============================
 
-A CLI (Command-Line Interface) tool for template-based code generation for [metadata-json](https://github.com/staruml/metadata-json) files (`.mdj`) typically created by [StarUML](http://staruml.io).
+A command line tool for template-based code generation from metadata encoded in JSON format based on [metadata-json](https://github.com/staruml/metadata-json) files (`.mdj`) typically created by [StarUML](http://staruml.io).
 
 Installation
 ------------
+
+This tool depends on [Node.js](http://nodejs.org) so you need to install it first. Install globally using `npm` command so as to use `mdgen` in any directory.
 
 ```
 $ npm install -g mdgen
@@ -17,8 +19,8 @@ $ npm install -g mdgen
 Features
 --------
 
-* Generate codes using templates of [EJS](https://github.com/tj/ejs)
-* (TODO) Generate images (PNG, JPEG, SVG) of diagrams
+* Generate codes using [EJS](https://github.com/tj/ejs) templates.
+* Generate a PDF document from diagrams.
 
 Usage
 -----
@@ -27,13 +29,37 @@ Usage
 $ mdgen [command] [options]
 ```
 
-### render
+### Generate codes with EJS template
+
+To generate codes with EJS template, use `render` command with following options:
+
+* `-m, --model <file>` : a model file to load (default `model.mdj`)
+* `-t, --template <file>` : template file (default `template.ejs`)
+* `-o, --output <file>` : output file (default `mdgen-out`)
+* `-s, --select <selector>` : selector for a set of elements (default `@Project`). To get more information about selector expression, refer to [here](https://github.com/staruml/metadata-json).
+
+To see the help, type `mdgen render -h` or `mdgen render --help` in shell.
+
+Here is an example to generate a set Java source files. Loads `model.mdj` file and renders all of UML Classes with `java-template.ejs` template, then save to files of its name and `.java` file extension in `out` folder.
 
 ```shell
-$ mdgen render -m model.mdj -t java-template.ejs -o out/<%=element.name%>.java -s @UMLClass
+$ mdgen render -m model.mdj -t java-template.ejs -o "out/<%=element.name%>.java" -s @UMLClass
 ```
 
-### png, jpg, svg, pdf (TODO)
+### Generate a PDF document
 
-Not implemented yet.
+To generate a PDF document of diagrams, use `pdf` command with following options:
+
+* `-m, --model <file>` : model file to load (default `model.mdj`)
+* `-o, --output <file>` : output file (default `mdgen-out.pdf`)
+* `-s, --select <selector>` : selector for a set of diagrams (default `@Diagram`). This means all diagrams. To get more information about selector expression, refer to [here](https://github.com/staruml/metadata-json).
+* `-z, --size <size>` : page size (default `A4`). Full list of page size can be found [here](https://github.com/staruml/metadata-json).
+* `-l, --layout <layout>` : page layout (default `landscape`). Or use `portrait`.
+* `-n, --showname <yesno>` : show diagram name on page top (default `yes`). Or use `no`.
+
+Here is an example generating all diagrams in a PDF document.
+
+```shell
+$ mdgen pdf -m model.mdj -o document.pdf
+```
 

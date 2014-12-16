@@ -2,6 +2,6 @@
     <head></head>
     <body>
         <h1><%= element.name %></h1>
-        <div><%= element.documentation %></div>
+        <div><%-: element.documentation | markdown %></div>
     </body>
 </html>

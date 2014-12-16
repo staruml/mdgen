@@ -15,7 +15,7 @@
     "dependencies": {
         "commander": "2.5.0",
         "fs-extra": "0.12.0",
-        "metadata-json": "0.8.4",
+        "metadata-json": "0.8.7",
         "ejs": "1.0.0",
         "markdown": "0.5.0"        
     },    
@@ -26,6 +26,7 @@
     "preferGlobal": true,
     "bin": {
         "mdgen": "bin/mdgen.js",
-        "mdgen-render": "bin/mdgen-render.js"
+        "mdgen-render": "bin/mdgen-render.js",
+        "mdgen-pdf": "bin/mdgen-pdf.js"
     }
 }

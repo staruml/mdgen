@@ -6,74 +6,43 @@ var program = require('commander'),
     mdjson  = require('metadata-json');
 
 program
-    .option('-m, --model <file>', 'model file to load')
-    .option('-t, --template <file>', 'template file')
-    .option('-o, --output <file>', 'output file')
-    .option('-s, --select <selector>', 'selector expression to select a set of elements')
+    .option('-m, --model <file>', 'model file to load (default "model.mdj")')
+    .option('-t, --template <file>', 'template file (default "template.ejs"')
+    .option('-o, --output <file>', 'output file (default "mdgen-out")')
+    .option('-s, --select <selector>', 'selector for a set of elements (default "@Project")')
     .parse(process.argv);
 
-var root;
 
-// Load model file
-if (!program.model) {
-    console.log("Model file is required");
-    process.exit(0);
-}
-if (fs.existsSync(program.model)) {
-    root = mdjson.loadFromFile(program.model);
-} else {
-    console.error("File not found: " + program.model);
-    process.exit(1);
-}
+// Default parameters
+program.model = program.model || "model.mdj";
+program.template = program.template || "template.ejs";
+program.output = program.output || "mdgen-out";
+program.select = program.select || "@Project";
 
-var elements = [root];
+// Generate codes
+var success = 0,
+    errors  = 0;
 
-// Select a set of elements to be rendered
-if (program.select) {
-    try {
-        elements = mdjson.Repository.select(program.select);
-    } catch (err) {
-        console.error("Error in selector expression: " + program.select);
-        process.exit(1);
-    }
-}
-
-var template;
-
-// Get template
-if (!program.template) {
-    console.log("Template file is required");
-    process.exit(0);
-}
-if (fs.existsSync(program.template)) {
-    template = fs.readFileSync(program.template, 'utf8');
-} else {
-    console.error("File not found: " + program.template);
-    process.exit(1);
+try {
+    mdjson.loadFromFile(program.model);
+    mdjson.renderBulk(program.template, program.output, program.select, {}, function (err, file, elem) {
+        if (err) {
+            errors++;
+            console.error(err);
+        } else {
+            success++;
+            console.log("File generated: " + file);
+        }
+    });
+} catch (err) {
+    errors++;
+    console.error(err);
 }
 
-// Set output file
-if (!program.output) {
-    program.output = "mdgen-out";
-}
-
-// Render all selected elements with template
-for (var i = 0, len = elements.length; i < len; i++) {
-    var element = elements[i],
-        output  = ejs.render(program.output, {element: element}),
-        options = {
-            mdjson   : mdjson,
-            filename : program.template,  // to avoid "include" error
-            root     : root,
-            element  : element
-        };
-    var rendered = ejs.render(template, options);
-    fs.ensureFileSync(output);
-    fs.writeFileSync(output, rendered);
-    console.log("File generated: " + output);
-}
-
-// Done.
 console.log();
-console.log("Total " + elements.length + " file(s) were generated.");
-console.log("Done without errors.");
+console.log("Total " + success + " file(s) were generated.");
+if (errors === 0) {
+    console.log("Done without errors.");
+} else {
+    console.log("Done with " + errors + " errors.");
+}
