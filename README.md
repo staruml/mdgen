@@ -32,7 +32,7 @@ To generate codes with EJS template, use `render` command with following options
 * `-m, --model <file>` : a model file to load (default `model.mdj`)
 * `-t, --template <file>` : template file (default `template.ejs`)
 * `-o, --output <file>` : output file (default `mdgen-out`)
-* `-s, --select <selector>` : selector for a set of elements (default `@Project`). To get more information about selector expression, refer to [here](https://github.com/staruml/metadata-json).
+* `-s, --select <selector>` : [selector expression](https://github.com/staruml/metadata-json/wiki/SelectorExpression) to select a set of elements (default `@Project`).
 
 To see the help, type `mdgen render -h` or `mdgen render --help` in shell.
 
@@ -48,7 +48,7 @@ To generate a PDF document of diagrams, use `pdf` command with following options
 
 * `-m, --model <file>` : model file to load (default `model.mdj`)
 * `-o, --output <file>` : output file (default `mdgen-out.pdf`)
-* `-s, --select <selector>` : selector for a set of diagrams (default `@Diagram`). This means all diagrams. To get more information about selector expression, refer to [here](https://github.com/staruml/metadata-json).
+* `-s, --select <selector>` : [selector expression](https://github.com/staruml/metadata-json/wiki/SelectorExpression) to select a set of elements (default `@Diagram`). This means all diagrams.
 * `-z, --size <size>` : page size (default `A4`). Full list of page size can be found [here](https://github.com/staruml/metadata-json).
 * `-l, --layout <layout>` : page layout (default `landscape`). Or use `portrait`.
 * `-n, --showname <yesno>` : show diagram name on page top (default `yes`). Or use `no`.
