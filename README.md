@@ -12,6 +12,13 @@ This tool depends on [Node.js](http://nodejs.org) so you need to install it firs
 $ npm install -g mdgen
 ```
 
+> **IMPORTANT**
+>
+> This `mdgen` uses [**node-canvas**](https://github.com/Automattic/node-canvas) module in order to generate diagram image files (PNG and SVG).
+> If you need to export diagram images, you have to install **Cairo** first before installing this module (_To installing Cairo on various platforms, please refer to https://github.com/Automattic/node-canvas_).
+> If you don't need to export images, ignore installation errors from `node-canvas`.
+
+
 Features
 --------
 
@@ -40,6 +47,24 @@ Here is an example to generate a set Java source files. Loads `model.mdj` file a
 
 ```shell
 $ mdgen render -m model.mdj -t java-template.ejs -o "out/<%=element.name%>.java" -s @UMLClass
+```
+
+### Export diagram images (PNG or SVG)
+
+To export diagram images, use `image` command with following options:
+
+* `-m, --model <file>` : a model file to load (default `model.mdj`)
+* `-o, --output <file>` : output image file name (default `<%=diagram.name%>.png`)
+* `-f, --format <format>`, image format "png" or "svg" (default `png`)
+* `-s, --select <selector>` : [selector expression](https://github.com/staruml/metadata-json/wiki/SelectorExpression) to select a set of diagrams (default `@Diagram`).
+
+
+To see the help, type `mdgen image -h` or `mdgen image --help` in shell.
+
+Here is an example to export diagram images. Loads `model.mdj` file and export all of diagrams as SVG format in `images` folder.
+
+```shell
+$ mdgen image -m model.mdj -o "images/<%=diagram.name%>.svg" -f "svg" -s @Diagram
 ```
 
 ### Generate a PDF document
