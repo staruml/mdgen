@@ -1,6 +1,6 @@
 {
     "name": "mdgen",
-    "version": "0.8.2",
+    "version": "0.9.0",
     "description": "Template-based code generator for model-driven development",
     "main": "mdgen.js",
     "scripts": {
@@ -15,7 +15,7 @@
     "dependencies": {
         "commander": "2.5.0",
         "fs-extra": "0.12.0",
-        "metadata-json": "0.8.9",
+        "metadata-json": "0.9.1",
         "ejs": "1.0.0",
         "markdown": "0.5.0"
     },
@@ -27,6 +27,7 @@
     "bin": {
         "mdgen": "bin/mdgen.js",
         "mdgen-render": "bin/mdgen-render.js",
-        "mdgen-pdf": "bin/mdgen-pdf.js"
+        "mdgen-pdf": "bin/mdgen-pdf.js",
+        "mdgen-html": "bin/mdgen-html.js"
     }
 }

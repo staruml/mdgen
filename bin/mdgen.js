@@ -15,5 +15,6 @@ program
     .usage('[command] [options]')
     .command('render', 'generate code using template')
     .command('pdf', 'generate PDF document')
+    .command('html', 'generate HTML document')
     .option('-r, --run <task>', 'run a specified task', task)
     .parse(process.argv);

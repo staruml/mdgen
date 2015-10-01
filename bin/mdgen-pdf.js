@@ -34,7 +34,7 @@ try {
     options.layout = program.layout;
     options.showName = (program.showname === "no") ? false : true;
     mdjson.exportToPDF(diagrams, program.output, options);
-    console.log("PDF Generated: " + program.output);
+    console.log("PDF generated: " + program.output);
 } catch (err) {
     console.error(err);
 }

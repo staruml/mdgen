@@ -59,3 +59,16 @@ Here is an example generating all diagrams in a PDF document.
 $ mdgen pdf -m model.mdj -o document.pdf
 ```
 
+### Generate HTML document
+
+To generate HTML docs, use `html` command with following options:
+
+* `-m, --model <file>` : model file to load (default `model.mdj`)
+* `-o, --output <file>` : output folder name (default `html-out`)
+* `-d, --diagram <yesno>` : export diagram images (default `yes`). Or use `no`.
+
+Here is an example generating HTML docs.
+`
+```shell
+$ mdgen html -m model.mdj -o html-out
+```
