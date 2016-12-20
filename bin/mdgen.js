@@ -5,13 +5,14 @@
  */
 
 var program = require('commander');
+var pjson = require('../package.json');
 
 function task(task) {
     console.log("run " + task);
 }
 
 program
-    .version('0.1.0')
+    .version(pjson.version)
     .usage('[command] [options]')
     .command('render', 'generate code using template')
     .command('image', 'export diagram image')

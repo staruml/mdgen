@@ -1,0 +1,9 @@
+[
+    {
+        "name"       : "Source Code Pro",
+        "regular"    : "SourceCodePro-Regular.ttf",
+        "italic"     : "SourceCodePro-Regular.ttf",
+        "bold"       : "SourceCodePro-Semibold.ttf",
+        "boldItalic" : "SourceCodePro-Semibold.ttf"
+    }
+]

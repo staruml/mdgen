@@ -1,0 +1,9 @@
+[
+    {
+        "name"       : "Roboto",
+        "regular"    : "Roboto-Regular.ttf",
+        "italic"     : "Roboto-Italic.ttf",
+        "bold"       : "Roboto-Bold.ttf",
+        "boldItalic" : "Roboto-BoldItalic.ttf"
+    }
+]

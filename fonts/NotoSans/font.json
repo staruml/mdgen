@@ -1,0 +1,26 @@
+[
+    {
+        "name"       : "default",
+        "regular"    : "NotoSansKR-Subset-Regular.ttf",
+        "italic"     : "NotoSansKR-Subset-Regular.ttf",
+        "bold"       : "NotoSansKR-Subset-Bold.ttf",
+        "boldItalic" : "NotoSansKR-Subset-Bold.ttf",
+        "unicodeRanges" : [90]
+    },
+    {
+        "name"       : "default",
+        "regular"    : "NotoSansJP-Subset-Regular.ttf",
+        "italic"     : "NotoSansJP-Subset-Regular.ttf",
+        "bold"       : "NotoSansJP-Subset-Bold.ttf",
+        "boldItalic" : "NotoSansJP-Subset-Bold.ttf",
+        "unicodeRanges" : [75,76,77,82]
+    },
+    {
+        "name"       : "default",
+        "regular"    : "NotoSansSC-Subset-Regular.ttf",
+        "italic"     : "NotoSansSC-Subset-Regular.ttf",
+        "bold"       : "NotoSansSC-Subset-Bold.ttf",
+        "boldItalic" : "NotoSansSC-Subset-Bold.ttf",
+        "unicodeRanges" : [72,73,74,83,85,87,103]
+    }    
+]

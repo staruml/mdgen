@@ -1,0 +1,9 @@
+[
+    {
+        "name"       : "Lato",
+        "regular"    : "Lato-Regular.ttf",
+        "italic"     : "Lato-Italic.ttf",
+        "bold"       : "Lato-Bold.ttf",
+        "boldItalic" : "Lato-BoldItalic.ttf"
+    }
+]

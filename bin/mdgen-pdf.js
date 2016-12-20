@@ -3,6 +3,7 @@
 var program = require('commander'),
     fs      = require('fs-extra'),
     ejs     = require('ejs'),
+    path    = require('path'),
     mdjson  = require('metadata-json');
 
 program
@@ -27,7 +28,16 @@ program.showname = program.showname || "yes";
 var diagrams,
     options = {};
 
+function loadDefaultFonts() {
+    var dir = path.normalize(__dirname + "/../fonts");
+    var fontDirs = fs.readdirSync(dir);
+    fontDirs.forEach(function (fontDir) {
+        mdjson.registerFont(path.join(dir, fontDir));
+    });
+}
+
 try {
+    loadDefaultFonts();
     mdjson.loadFromFile(program.model);
     diagrams = mdjson.Repository.select(program.select);
     options.size = program.size;

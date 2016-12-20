@@ -1,0 +1,9 @@
+[
+    {
+        "name"       : "Source Sans Pro",
+        "regular"    : "SourceSansPro-Regular.ttf",
+        "italic"     : "SourceSansPro-It.ttf",
+        "bold"       : "SourceSansPro-Semibold.ttf",
+        "boldItalic" : "SourceSansPro-SemiboldItalic.ttf"
+    }
+]

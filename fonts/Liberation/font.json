@@ -1,0 +1,30 @@
+[
+    {
+        "name"       : "default",
+        "regular"    : "LiberationSans-Regular.ttf",
+        "italic"     : "LiberationSans-Italic.ttf",
+        "bold"       : "LiberationSans-Bold.ttf",
+        "boldItalic" : "LiberationSans-BoldItalic.ttf"
+    },
+    {
+        "name"       : "Arial",
+        "regular"    : "LiberationSans-Regular.ttf",
+        "italic"     : "LiberationSans-Italic.ttf",
+        "bold"       : "LiberationSans-Bold.ttf",
+        "boldItalic" : "LiberationSans-BoldItalic.ttf"
+    },
+    {
+        "name"       : "Times New Roman",
+        "regular"    : "LiberationSerif-Regular.ttf",
+        "italic"     : "LiberationSerif-Italic.ttf",
+        "bold"       : "LiberationSerif-Bold.ttf",
+        "boldItalic" : "LiberationSerif-BoldItalic.ttf"
+    },
+    {
+        "name"       : "Courier New",
+        "regular"    : "LiberationMono-Regular.ttf",
+        "italic"     : "LiberationMono-Italic.ttf",
+        "bold"       : "LiberationMono-Bold.ttf",
+        "boldItalic" : "LiberationMono-BoldItalic.ttf"
+    }
+]
