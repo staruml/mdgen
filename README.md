@@ -1,3 +1,7 @@
+> __This project is deprecated. Use [StarUML CLI](https://docs.staruml.io/user-guide/cli-command-line-interface) from version 5.x__
+
+---
+
 Model-Driven Generation (mdgen)
 ===============================
 
